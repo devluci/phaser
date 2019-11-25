@@ -17,7 +17,8 @@
         "Phaser": true,
         "process": true,
         "ActiveXObject": true,
-        "FBInstant": true
+        "FBInstant": true,
+        "__webpack_hash__": true
     },
     "rules": {
 
@@ -64,7 +65,7 @@
         "array-bracket-spacing": [ "error", "always" ],
         "block-spacing": [ "error", "always" ],
         "brace-style": [ "error", "allman", { "allowSingleLine": true } ],
-        "camelcase": "error",
+        "camelcase": ["error", { "allow":  ["__webpack_hash__"] }],
         "comma-dangle": [ "error", "never" ],
         "comma-style": [ "error", "last" ],
         "computed-property-spacing": [ "error", "never" ],

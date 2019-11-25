@@ -92,11 +92,11 @@ var File = new Class({
 
         if (this.url === undefined)
         {
-            this.url = loader.path + loadKey + '.' + GetFastValue(fileConfig, 'extension', '');
+            this.url = loader.path + loadKey + '.' + GetFastValue(fileConfig, 'extension', '') + '?' + __webpack_hash__;
         }
         else if (typeof(this.url) !== 'function')
         {
-            this.url = loader.path + this.url;
+            this.url = loader.path + this.url + '?' + __webpack_hash__;
         }
 
         /**
@@ -282,7 +282,7 @@ var File = new Class({
             {
                 //  The creation of this XHRLoader starts the load process going.
                 //  It will automatically call the following, based on the load outcome:
-                //  
+                //
                 // xhr.onload = this.onLoad
                 // xhr.onerror = this.onError
                 // xhr.onprogress = this.onProgress
@@ -487,7 +487,7 @@ var File = new Class({
  * @method Phaser.Loader.File.createObjectURL
  * @static
  * @since 3.7.0
- * 
+ *
  * @param {HTMLImageElement} image - Image object which 'src' attribute should be set to object URL.
  * @param {Blob} blob - A Blob object to create an object URL for.
  * @param {string} defaultType - Default mime type used if blob type is not available.
@@ -521,7 +521,7 @@ File.createObjectURL = function (image, blob, defaultType)
  * @method Phaser.Loader.File.revokeObjectURL
  * @static
  * @since 3.7.0
- * 
+ *
  * @param {HTMLImageElement} image - Image object which 'src' attribute should be revoked.
  */
 File.revokeObjectURL = function (image)
